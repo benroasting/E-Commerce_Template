@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -15,16 +19,10 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.card {
+  @apply m-2 mb-5 block rounded-lg border border-gray-200 shadow-md;
 }
 
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: black;
-    background: white;
-  }
+.primary-button {
+  @apply rounded border-2 border-black shadow-md text-black py-2 px-4 hover:border-gray-400;
 }

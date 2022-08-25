@@ -25,7 +25,7 @@ export default function ProductItem({ product }) {
         </Link>
         <p>Processing Method: {product.process}</p>
         <p>Tasting Notes: {product.tasting_notes}</p>
-        <p>${product.price}</p>
+        <p className="pb-2">${product.price}</p>
         <button className="primary-button" type="button">
           Add to cart
         </button>
