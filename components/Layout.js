@@ -2,6 +2,8 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
+//main page layout
+
 export default function Layout({ children }) {
   return (
     <>

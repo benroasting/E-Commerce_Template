@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React from "react";
 
+
+//product cards
 export default function ProductItem({ product }) {
   return (
     <div className="card">
