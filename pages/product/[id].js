@@ -31,6 +31,34 @@ function ProductScreen() {
             layout="responsive"
           ></Image>
         </div>
+        <div>
+          <ul>
+            <li>
+              <h1 className="text-lg">
+                {product.origin} {product.farm}
+              </h1>
+            </li>
+            <li>Processing Method: {product.process}</li>
+            <li>Variety: {product.variety}</li>
+            <li>Elevation: {product.elevation}</li>
+            <li>Tasting Notes: {product.tasting_notes}</li>
+          </ul>
+        </div>
+        <div>
+          <div className="card p-5">
+            <div className="mb-2 flex-col">
+              <div className="flex justify-between">
+                <h1>Price:</h1>
+                <h1>${product.price}</h1>
+              </div>
+              <div className="flex justify-between">
+                <h1>Product Status:</h1>
+                <h1>{product.countInStock > 0 ? "In stock" : "Unavailable"}</h1>
+              </div>
+              <button className="primary-button w-full">Add to cart</button>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
