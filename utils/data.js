@@ -7,10 +7,11 @@ const data = {
       origin: "Guatemala",
       farm: "Chimaltenango Tecpan",
       variety: "Bourbon",
-      process: "natural",
+      process: "Natural",
       price: "18.00",
       elevation: 1750,
       tasting_notes: "Chocolate, Candied Almond, and Cane Sugar",
+      countInStock: 5,
     },
     {
       category: "coffee",
@@ -19,10 +20,11 @@ const data = {
       origin: "Ethiopia",
       farm: "Yirgacheffe",
       variety: "Heirloom",
-      process: "natural",
+      process: "Natural",
       price: "19.00",
       elevation: 2000,
       tasting_notes: "Blueberry, Chocolate, and Lemon",
+      countInStock: 5,
     },
     {
       category: "coffee",
@@ -31,10 +33,11 @@ const data = {
       origin: "Kenya",
       farm: "Kirinyaga",
       variety: "SL-28",
-      process: "washed",
+      process: "Washed",
       price: "21.00",
       elevation: 1850,
       tasting_notes: "Pomegranate, Blackberry, and Cane Sugar",
+      countInStock: 5,
     },
     {
       category: "coffee",
@@ -47,6 +50,7 @@ const data = {
       price: "18.00",
       elevation: 1750,
       tasting_notes: "Chocolate, Candied Almond, and Cane Sugar",
+      countInStock: 5,
     },
     {
       category: "coffee",
@@ -59,6 +63,7 @@ const data = {
       price: "19.00",
       elevation: 2000,
       tasting_notes: "Blueberry, Chocolate, and Lemon",
+      countInStock: 5,
     },
     {
       category: "coffee",
@@ -71,6 +76,7 @@ const data = {
       price: "21.00",
       elevation: 1850,
       tasting_notes: "Pomegranate, Blackberry, and Cane Sugar",
+      countInStock: 5,
     },
   ],
 };
