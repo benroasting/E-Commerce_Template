@@ -3,6 +3,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/guatemala-coffee.jpeg",
+      name: "Guatemala Chimaltenango Tecpan",
       id: "Chimaltenango",
       origin: "Guatemala",
       farm: "Chimaltenango Tecpan",
@@ -16,6 +17,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/ethiopia-coffee.jpeg",
+      name: "Ethiopia Yirgacheffe",
       id: "Yirgacheffe",
       origin: "Ethiopia",
       farm: "Yirgacheffe",
@@ -29,6 +31,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/kenya-coffee.jpeg",
+      name: "Kenya Kirinyaga",
       id: "Kirinyaga",
       origin: "Kenya",
       farm: "Kirinyaga",
@@ -42,6 +45,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/guatemala-coffee.jpeg",
+      name: "Guatemala Chimaltenango Tecpan",
       id: "Chimaltenango",
       origin: "Guatemala",
       farm: "Chimaltenango Tecpan",
@@ -55,6 +59,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/ethiopia-coffee.jpeg",
+      name: "Ethiopia Yirgacheffe",
       id: "Yirgacheffe",
       origin: "Ethiopia",
       farm: "Yirgacheffe",
@@ -68,6 +73,7 @@ const data = {
     {
       category: "coffee",
       image: "/images/kenya-coffee.jpeg",
+      name: "Kenya Kirinyaga",
       id: "Kirinyaga",
       origin: "Kenya",
       farm: "Kirinyaga",
