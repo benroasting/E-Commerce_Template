@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 
-
 //product cards
 export default function ProductItem({ product }) {
   return (
@@ -20,9 +19,7 @@ export default function ProductItem({ product }) {
       <div className="flex flex-col items-center text-center justify-center p-5">
         <Link href={`/product/${product.id}`}>
           <a>
-            <h3 className="text-md">
-              {product.origin} {product.farm}
-            </h3>
+            <h3 className="text-md">{product.name}</h3>
           </a>
         </Link>
         <p>Processing Method: {product.process}</p>
