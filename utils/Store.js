@@ -20,6 +20,15 @@ function reducer(state, action) {
         : [...state.cart.cartItems, newItem];
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case "CART_REMOVE_ITEM": {
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    //TODO add another item
+
+    //TODO subtract
     default:
       return state;
   }

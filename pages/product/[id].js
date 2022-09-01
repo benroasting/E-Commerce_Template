@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import data from "../../utils/data";
 import { Store } from "../../utils/Store";
@@ -26,6 +26,8 @@ export default function ProductScreen() {
     }
 
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
+    // Do I want the user to be redirected to cart after adding item?
+    // Router.push("/cart");
   };
 
   return (
