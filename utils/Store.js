@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 
 export const Store = createContext();
 
-console.log(Store);
 const intitialCartState = {
   cart: { cartItems: [] },
 };
@@ -21,13 +20,22 @@ function reducer(state, action) {
         : [...state.cart.cartItems, newItem];
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case "CART_REMOVE_ITEM": {
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+    //TODO add another item
+
+    //TODO subtract
     default:
       return state;
   }
 }
 
 export function StoreProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer.intitialCartState);
+  const [state, dispatch] = useReducer(reducer, intitialCartState);
   const value = { state, dispatch };
   return <Store.Provider value={value}>{children}</Store.Provider>;
 }

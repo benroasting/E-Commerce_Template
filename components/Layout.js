@@ -5,8 +5,9 @@ import { Store } from "../utils/Store";
 
 //main page layout
 
-export default function Layout({ children }) {
+export default function Layout({ title, children }) {
   const { state } = useContext(Store);
+  const { cart } = state;
 
   return (
     <>
@@ -23,7 +24,14 @@ export default function Layout({ children }) {
             </Link>
             <div>
               <Link href="/cart">
-                <a className="p-5">CART</a>
+                <a className="p-5">
+                  CART
+                  {cart.cartItems.length > 0 && (
+                    <span className="ml-1 rounded-full bg-red-400 px-2 py-1 text-xs font-bold text-white">
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                    </span>
+                  )}
+                </a>
               </Link>
               <Link href="/login">
                 <a className="p-5">LOGIN</a>
