@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 
 export const Store = createContext();
 
-console.log(Store);
 const intitialCartState = {
   cart: { cartItems: [] },
 };
@@ -27,7 +26,7 @@ function reducer(state, action) {
 }
 
 export function StoreProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer.intitialCartState);
+  const [state, dispatch] = useReducer(reducer, intitialCartState);
   const value = { state, dispatch };
   return <Store.Provider value={value}>{children}</Store.Provider>;
 }

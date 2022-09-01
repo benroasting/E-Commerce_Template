@@ -26,7 +26,7 @@ export default function ProductItem({ product }) {
         <p>Tasting Notes: {product.tasting_notes}</p>
         <p className="pb-2">${product.price}</p>
         <button className="primary-button" type="button">
-          Add to cart
+          View Item
         </button>
       </div>
     </div>

@@ -8,8 +8,6 @@ import Image from "next/image";
 
 export default function ProductScreen() {
   const { state, dispatch } = useContext(Store);
-  const value = useContext(Store);
-  console.log(value);
 
   const { query } = useRouter();
   const { id } = query;
@@ -19,7 +17,15 @@ export default function ProductScreen() {
   }
 
   const addToCartHandler = () => {
-    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity: 1 } });
+    const existItem = state.cart.cartItems.find((x) => x.id === product.id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+
+    if (product.countInStock < quantity) {
+      alert("Sorry! This product is out of stock");
+      return;
+    }
+
+    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
   };
 
   return (
