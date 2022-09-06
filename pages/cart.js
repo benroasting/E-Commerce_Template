@@ -100,7 +100,7 @@ function CartScreen() {
               <li>
                 <button
                   onClick={() => {
-                    router.push("/shipping");
+                    router.push("login?redirect=/shipping");
                   }}
                   className="primary-button"
                 >
