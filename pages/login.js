@@ -28,6 +28,7 @@ export default function LoginScreen() {
                 required: "Please enter your email",
                 pattern: {
                   value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9_.]+$/i,
+                  message: "Please enter a valid email",
                 },
               })}
               className="w-full"
@@ -42,13 +43,19 @@ export default function LoginScreen() {
             <label htmlFor="password">Password</label>
             <input
               type="password"
-              {...register("email", { required: "Please enter your email" })}
+              {...register("password", {
+                required: "Please enter your password",
+                minLength: {
+                  value: 8,
+                  message: "Your password must be 8 or more characters",
+                },
+              })}
               className="w-full"
               id="password"
               autoFocus
             ></input>
-            {errors.email && (
-              <div className="text-red-500">{errors.email.message}</div>
+            {errors.password && (
+              <div className="text-red-500">{errors.password.message}</div>
             )}
           </div>
           <div className="mb-4">
