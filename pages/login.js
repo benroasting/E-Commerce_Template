@@ -1,16 +1,44 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
+import { signIn, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import { getError } from "../utils/errors";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export default function LoginScreen() {
+  const { data: session } = useSession();
+
+  const router = useRouter();
+  const { redirect } = router.query;
+
+  useEffect(() => {
+    if (session?.user) {
+      router.push(redirect || "/");
+    }
+  }, [router, session, redirect]);
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const submitHandler = ({ email, password }) => {};
+  const submitHandler = async ({ email, password }) => {
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+      if (result.error) {
+        toast.error(result.error);
+      }
+    } catch (err) {
+      toast.error(getError(err));
+    }
+  };
 
   return (
     <div>
@@ -46,8 +74,8 @@ export default function LoginScreen() {
               {...register("password", {
                 required: "Please enter your password",
                 minLength: {
-                  value: 8,
-                  message: "Your password must be 8 or more characters",
+                  value: 6,
+                  message: "Your password must be 6 or more characters",
                 },
               })}
               className="w-full"
@@ -69,5 +97,4 @@ export default function LoginScreen() {
       </Layout>
     </div>
   );
-  s;
 }
