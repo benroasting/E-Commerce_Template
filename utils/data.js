@@ -15,7 +15,6 @@ const data = {
       isAdmin: false,
     },
   ],
-
   products: [
     {
       category: "coffee",
