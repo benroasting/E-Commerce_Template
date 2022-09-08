@@ -16,6 +16,7 @@ async function connect() {
   }
   const db = await mongoose.connect(process.env.MONGODB_URI);
   console.log("new connection");
+  connection.isConnected = db.connections[0].readyState;
 }
 
 async function disconnect() {
@@ -29,6 +30,6 @@ async function disconnect() {
   }
 }
 
-const db = { connect };
+const db = { connect, disconnect };
 
 export default db;
