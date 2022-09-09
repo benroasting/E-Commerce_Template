@@ -3,6 +3,7 @@ import { signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import DropdownLink from "./DropdownLink";
+import Cookies from "js-cookie";
 import { ToastContainer } from "react-toastify";
 import { Menu } from "@headlessui/react";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +14,7 @@ import { Store } from "../utils/Store";
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
 
-  const { state } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
 
   const { cart } = state;
 
@@ -23,6 +24,8 @@ export default function Layout({ title, children }) {
   }, [cart.cartItems]);
 
   const logoutClickHandler = () => {
+    Cookies.remove("cart");
+    dispatch({ type: "CART_RESET" });
     signOut({ callbackUrl: "/login" });
   };
 
