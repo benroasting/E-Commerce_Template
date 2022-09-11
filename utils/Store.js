@@ -6,7 +6,7 @@ export const Store = createContext();
 const intitialCartState = {
   cart: Cookies.get("cart")
     ? JSON.parse(Cookies.get("cart"))
-    : { cartItems: [] },
+    : { cartItems: [], shippingAddress: [] },
 };
 
 function reducer(state, action) {
@@ -41,10 +41,18 @@ function reducer(state, action) {
         },
       };
     }
+    case "SAVE SHIPPING ADDRESS":
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          shippingAddress: {
+            ...state.cart.shippingAddress,
+            ...action.payload,
+          },
+        },
+      };
     default:
-      console.log("Hi There");
-      //   return state;
-      throw new Error(`${action.type} is not a valid type`);
   }
 }
 
