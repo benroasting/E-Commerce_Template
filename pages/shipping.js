@@ -4,6 +4,7 @@ import CheckoutWizard from "../components/CheckoutWizard";
 import Layout from "../components/layout";
 import { Store } from "../utils/Store";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 export default function ShippingScreen() {
   const {
@@ -16,6 +17,7 @@ export default function ShippingScreen() {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const { shippingAddress } = cart;
+  const router = useRouter();
 
   useEffect(() => {
     setValue("fullName", shippingAddress.fullName);
@@ -43,6 +45,8 @@ export default function ShippingScreen() {
         },
       })
     );
+
+    router.push("/payment");
   };
 
   return (
@@ -138,3 +142,5 @@ export default function ShippingScreen() {
     </Layout>
   );
 }
+
+ShippingScreen.auth = true;
