@@ -1,5 +1,6 @@
 import bcrypt from "bcryptjs";
 
+//product data being pulled from MongoDB, but could place here for testing
 const data = {
   users: [
     {
